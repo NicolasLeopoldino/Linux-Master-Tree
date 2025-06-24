@@ -15,7 +15,8 @@ while true; do
   echo -e "${MAGENTA}╠══════════════════════════════╣${RESET}"
   echo -e "${MAGENTA}║${YELLOW} 1) Diagnóstico básico      🩺 ${MAGENTA}║${RESET}"
   echo -e "${MAGENTA}║${YELLOW} 2) Mantenimiento seguro   🧹 ${MAGENTA}║${RESET}"
-  echo -e "${MAGENTA}║${YELLOW} 3) Salir                  🚪 ${MAGENTA}║${RESET}"
+  echo -e "${MAGENTA}║${YELLOW} 3) Control de usuarios   🧹 ${MAGENTA}║${RESET}"
+  echo -e "${MAGENTA}║${YELLOW} 4) Salir                  🚪 ${MAGENTA}║${RESET}"
   echo -e "${MAGENTA}╚══════════════════════════════╝${RESET}"
   echo -ne "\nIngresá opción: ${BOLD}${CYAN}"
   read -r opcion
@@ -33,6 +34,11 @@ while true; do
       read
       ;;
     3)
+      ./users.sh
+      echo -e "\nPresioná ENTER para volver al menú..."
+      read
+      ;;
+    4)
       echo -e "${RED}Saliendo...${RESET}"
       exit 0
       ;;
