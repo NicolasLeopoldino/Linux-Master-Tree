@@ -1,26 +1,23 @@
 #!/bin/bash
 
 # Colores
-GREEN="\e[32m"
-YELLOW="\e[33m"
-CYAN="\e[36m"
-RED="\e[31m"
 BOLD="\e[1m"
+CYAN="\e[36m"
+MAGENTA="\e[35m"
+YELLOW="\e[33m"
 RESET="\e[0m"
-
-# Iconos
-DIAG_ICON="🩺"
-MAINT_ICON="🧹"
-EXIT_ICON="🚪"
-ERROR_ICON="❌"
+RED="\e[31m"
 
 while true; do
   clear
-  echo -e "${BOLD}${CYAN}🚀 Menú de Scripts - Seleccioná una opción:${RESET}"
-  echo -e " 1) ${DIAG_ICON} Diagnóstico básico"
-  echo -e " 2) ${MAINT_ICON} Mantenimiento seguro"
-  echo -e " 3) ${EXIT_ICON} Salir"
-  echo -ne "\nIngresá opción: ${YELLOW}"
+  echo -e "${MAGENTA}╔══════════════════════════════╗${RESET}"
+  echo -e "${MAGENTA}║${CYAN} 🚀 Menú de Scripts            ${MAGENTA}║${RESET}"
+  echo -e "${MAGENTA}╠══════════════════════════════╣${RESET}"
+  echo -e "${MAGENTA}║${YELLOW} 1) Diagnóstico básico      🩺 ${MAGENTA}║${RESET}"
+  echo -e "${MAGENTA}║${YELLOW} 2) Mantenimiento seguro   🧹 ${MAGENTA}║${RESET}"
+  echo -e "${MAGENTA}║${YELLOW} 3) Salir                  🚪 ${MAGENTA}║${RESET}"
+  echo -e "${MAGENTA}╚══════════════════════════════╝${RESET}"
+  echo -ne "\nIngresá opción: ${BOLD}${CYAN}"
   read -r opcion
   echo -e "${RESET}"
 
@@ -36,11 +33,11 @@ while true; do
       read
       ;;
     3)
-      echo -e "${GREEN}Saliendo...${RESET}"
+      echo -e "${RED}Saliendo...${RESET}"
       exit 0
       ;;
     *)
-      echo -e "${RED}${ERROR_ICON} Opción inválida${RESET}"
+      echo -e "${RED}❌ Opción inválida${RESET}"
       sleep 1
       ;;
   esac
