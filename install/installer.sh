@@ -22,7 +22,6 @@ detect_os() {
     PKG_MANAGER="apt"
   elif [[ -f /etc/redhat-release ]]; then
     OS="RedHat/CentOS"
-    # Preferimos dnf si está disponible
     if command -v dnf &> /dev/null; then
       PKG_MANAGER="dnf"
     else
@@ -43,7 +42,7 @@ install_basic_tools() {
   echo -e "${INFO_ICON} Paquetes a instalar: ${YELLOW}${PACKAGES[*]}${RESET}"
 
   read -p "¿Querés continuar? [s/N]: " CONF
-  CONF=${CONF,,} # to lowercase
+  CONF=${CONF,,}
 
   if [[ "$CONF" != "s" ]]; then
     echo -e "${WARN_ICON} Instalación cancelada."
@@ -84,8 +83,20 @@ while true; do
     1)
       install_basic_tools
       ;;
-    2|3|4|5|6)
-      echo -e "${WARN_ICON} 🔧 Esta función será agregada próximamente..."
+    2)
+      ./install/services_network/services_network.sh
+      ;;
+    3)
+      ./install/monitoring/monitoring.sh
+      ;;
+    4)
+      ./install/backup/backup.sh
+      ;;
+    5)
+      ./install/security/security.sh
+      ;;
+    6)
+      ./install/virtualization/virtualization.sh
       ;;
     7)
       echo -e "${GREEN}Saliendo...${RESET}"
@@ -99,4 +110,3 @@ while true; do
   echo -e "\nPresioná ENTER para continuar..."
   read -r
 done
-
