@@ -10,14 +10,15 @@ RED="\e[31m"
 
 while true; do
   clear
-  echo -e "${MAGENTA}╔══════════════════════════════╗${RESET}"
-  echo -e "${MAGENTA}║${CYAN} 🚀 Menú de Scripts            ${MAGENTA}║${RESET}"
-  echo -e "${MAGENTA}╠══════════════════════════════╣${RESET}"
-  echo -e "${MAGENTA}║${YELLOW} 1) Diagnóstico básico      🩺 ${MAGENTA}║${RESET}"
-  echo -e "${MAGENTA}║${YELLOW} 2) Mantenimiento seguro   🧹 ${MAGENTA}║${RESET}"
-  echo -e "${MAGENTA}║${YELLOW} 3) Control de usuarios   🧹 ${MAGENTA}║${RESET}"
-  echo -e "${MAGENTA}║${YELLOW} 4) Salir                  🚪 ${MAGENTA}║${RESET}"
-  echo -e "${MAGENTA}╚══════════════════════════════╝${RESET}"
+  echo -e "${MAGENTA}╔════════════════════════════════════╗${RESET}"
+  echo -e "${MAGENTA}║${CYAN} 🚀 Menú de Scripts                  ${MAGENTA}║${RESET}"
+  echo -e "${MAGENTA}╠════════════════════════════════════╣${RESET}"
+  echo -e "${MAGENTA}║${YELLOW} 1) Diagnóstico básico          🩺 ${MAGENTA}║${RESET}"
+  echo -e "${MAGENTA}║${YELLOW} 2) Mantenimiento seguro       🧹 ${MAGENTA}║${RESET}"
+  echo -e "${MAGENTA}║${YELLOW} 3) Control de usuarios        👥 ${MAGENTA}║${RESET}"
+  echo -e "${MAGENTA}║${YELLOW} 4) Instalador de servicios    🛠️ ${MAGENTA}║${RESET}"
+  echo -e "${MAGENTA}║${YELLOW} 5) Salir                      🚪 ${MAGENTA}║${RESET}"
+  echo -e "${MAGENTA}╚════════════════════════════════════╝${RESET}"
   echo -ne "\nIngresá opción: ${BOLD}${CYAN}"
   read -r opcion
   echo -e "${RESET}"
@@ -39,6 +40,11 @@ while true; do
       read
       ;;
     4)
+      ./install/installer.sh
+      echo -e "\nPresioná ENTER para volver al menú..."
+      read
+      ;;
+    5)
       echo -e "${RED}Saliendo...${RESET}"
       exit 0
       ;;
